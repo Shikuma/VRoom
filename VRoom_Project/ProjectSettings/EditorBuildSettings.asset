@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/VRSampleScenes/Scenes/Shooter360.unity
   - enabled: 1
     path: Assets/VRSampleScenes/Scenes/Shooter180.unity
+  - enabled: 1
+    path: Assets/Scenes/ScottCourt.unity

@@ -16,11 +16,12 @@ public class Player_Controller : MonoBehaviour {
         if(Physics.Raycast(ray, out hit, 10)){
             //print("Collided with " + hit.collider.gameObject.name);
             Debug.DrawLine(ray.origin, hit.point);
-            if(hit.collider.gameObject.GetComponent<Object_Controller>() != null && shaderSet){
+            if(hit.collider.gameObject.GetComponent<Object_Controller>() != null){
 				print ("Calling select() for: " + hit.collider.gameObject.name);
                 hit.collider.gameObject.GetComponent<Object_Controller>().Select();
-				shaderSet = false;
             }
         }
+
+       // if (Input.GetAxis("Horizontal") > 0) gameObject.GetComponent<Rigidbody>().AddForce(transform.right, ForceMode.Impulse);
 	}
 }
