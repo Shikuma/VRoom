@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Player_Controller : MonoBehaviour {
 	private bool shaderSet = true;
+	private GameObject currObj = null;
 	// Use this for initialization
 	void Start () {
 	
@@ -14,11 +15,17 @@ public class Player_Controller : MonoBehaviour {
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         RaycastHit hit;
         if(Physics.Raycast(ray, out hit, 10)){
+			GameObject hitObj = hit.collider.gameObject;
             //print("Collided with " + hit.collider.gameObject.name);
             Debug.DrawLine(ray.origin, hit.point);
-            if(hit.collider.gameObject.GetComponent<Object_Controller>() != null){
+			if(hitObj.GetComponent<Object_Controller>() != null){
 				print ("Calling select() for: " + hit.collider.gameObject.name);
-                hit.collider.gameObject.GetComponent<Object_Controller>().Select();
+				//print("Callind Deselect() for: " + 
+				if (currObj != null)
+					currObj.GetComponent<Object_Controller> ().Deselect ();
+				hitObj.GetComponent<Object_Controller> ().Select();
+				currObj = hitObj;
+				
             }
         }
 
