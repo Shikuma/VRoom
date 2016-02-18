@@ -28,10 +28,9 @@ public class Object_Controller : MonoBehaviour {
 
 			} else Debug.Log ("Parent renderer is null");
 
-			name.text = objName;
-
-			//GetComponent<Renderer>().material.shader = highlightShader;
             //display object name
+            name.text = objName;
+            
             //hit space to play audio, boolean in update
         }
     }
