@@ -18,7 +18,6 @@ public class Object_Controller : MonoBehaviour {
 
     public void Select(){
         if(selectable){
-            Debug.Log("This object is selectable");
             //highlight object
 			if (GetComponent<Renderer> () != null) {
 				GetComponent<Renderer> ().material.shader = highlightShader;
