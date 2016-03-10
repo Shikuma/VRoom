@@ -12,12 +12,13 @@ public class Player_Controller : MonoBehaviour {
         namePanel.SetActive(false);
 		GC = gameController.GetComponent<GameController> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update (){
 		//Pausing
-		if (Input.GetKeyDown (KeyCode.Escape))
+		if (Input.GetKeyDown (KeyCode.Escape)) 
 			GC.pause ();
+
 
 
         Quaternion HMDRotation = InputTracking.GetLocalRotation(VRNode.CenterEye);
